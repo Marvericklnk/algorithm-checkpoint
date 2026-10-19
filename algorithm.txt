@@ -1,0 +1,29 @@
+Algorithm CountSentence
+Variables
+    sentence : String
+    character : Character
+    length, words, vowels, i : Integer
+Begin
+    Write("Enter a sentence ending with a point:")
+    Read(sentence)
+    length := 0
+    words := 1
+    vowels := 0
+    i := 0
+    WHILE (sentence[i] <> '.') DO
+        character := sentence[i]
+        length := length + 1
+        IF (character = ' ') THEN
+            words := words + 1
+        END_IF
+        IF (character = 'a' OR character = 'e' OR character = 'i' OR character = 'o' OR character = 'u'
+            OR character = 'A' OR character = 'E' OR character = 'I' OR character = 'O' OR character = 'U') THEN
+            vowels := vowels + 1
+        END_IF
+        i := i + 1
+    END_WHILE
+    length := length + 1
+    Write("Length: ", length)
+    Write("Words: ", words)
+    Write("Vowels: ", vowels)
+End
